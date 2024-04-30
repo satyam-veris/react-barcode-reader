@@ -3,7 +3,8 @@
   "version": "0.0.2",
   "description": "A react component for reading barcodes and Qr codes from keybord input devices.",
   "main": "./lib/index.js",
-  "module": "commonjs",
+  "module": "./src/index.js",
+  "type": "commonjs",
   "scripts": {
     "storybook": "start-storybook -p 9001",
     "storybook:export": "build-storybook -c .storybook -o ./docs",
