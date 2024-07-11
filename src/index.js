@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 function isContentEditable(element) {
   if (typeof element.getAttribute !== 'function') {
@@ -154,25 +153,6 @@ class BarcodeScanner extends React.Component {
     if (this.props.testCode) this.scannerDetectionTest(this.props.testCode)
     return null
   }
-}
-
-
-BarcodeScanner.propTypes = {
-  onScan: PropTypes.func, // Callback after detection of a successfull scanning (scanned string in parameter)
-  onError: PropTypes.func, // Callback after detection of a unsuccessfull scanning (scanned string in parameter)
-  onReceive: PropTypes.func, // Callback after receiving and processing a char (scanned char in parameter)
-  onKeyDetect: PropTypes.func, // Callback after detecting a keyDown (key char in parameter) - in contrast to onReceive, this fires for non-character keys like tab, arrows, etc. too!
-  timeBeforeScanTest: PropTypes.number, // Wait duration (ms) after keypress event to check if scanning is finished
-  avgTimeByChar: PropTypes.number, // Average time (ms) between 2 chars. Used to do difference between keyboard typing and scanning
-  minLength: PropTypes.number, // Minimum length for a scanning
-  endChar: PropTypes.arrayOf(PropTypes.number), // Chars to remove and means end of scanning
-  startChar: PropTypes.arrayOf(PropTypes.number), // Chars to remove and means start of scanning
-  scanButtonKeyCode: PropTypes.number, // Key code of the scanner hardware button (if the scanner button a acts as a key itself)
-  scanButtonLongPressThreshold: PropTypes.number, // How many times the hardware button should issue a pressed event before a barcode is read to detect a longpress
-  onScanButtonLongPressed: PropTypes.func, // Callback after detection of a successfull scan while the scan button was pressed and held down
-  stopPropagation: PropTypes.bool, // Stop immediate propagation on keypress event
-  preventDefault: PropTypes.bool, // Prevent default action on keypress event
-  testCode: PropTypes.string, // Test string for simulating
 }
 
 BarcodeScanner.defaultProps = {
